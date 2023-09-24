@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.125em;
+            line-height: 1.6;
+            color: #333;
+            padding: 2em;
+        }
+
+        .hero {
+            display: flex;
+            grid-gap: 2em;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @media (min-width: 960px) {
+            .hero {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Hello World!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat eligendi inventore asperiores impedit voluptatum esse officia eveniet ex pariatur illum.</p>
+        </div>
+        <picture>
+            <source media="(min-width: 960px)" srcset="img/Luffy.jpg2" sizes="50vw">
+            <source media="(min-width: 600px)" srcset="img/Luffy.jpg3"> 
+            <img src="img/Luffy.jpg" alt="Luffy">
+        </picture>
+    </div>
+
+    <figure>
+        <img src="img/Luffy3.jpg" alt="Luffy">
+        <figcaption>Monkey D. Luffy seorang yang akan menjadi raja bajak laut</figcaption>
+    </figure>
+
+    <h1 style="margin-bottom: 1000px;">Image Elements</h1>
+    <img src="img/Luffy.jpg" alt="Monkey D. Luffy" srcset="img/Luffy.jpg 500w, img/Luffy2.jpg 750w, img/Luffy3.jpg 1000w" sizes="(min-width: 1200px) 50vw" loading="lazy">
+</body>
+</html>
