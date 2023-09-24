@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio dan Video</title>
+</head>
+<body>
+    <h1>Music Dari Local</h1>
+    <figure>
+        <figcaption>
+            <audio controls loop>
+                <source src="audio/yad.mp3">
+            </audio>
+        </figcaption>
+    </figure>
+
+    <h1>Video Dari Local</h1>
+    <video controls width="400">
+        <source src="video/laptop.mp4">
+        <track src="captions/caption.vtt" kind="captions" title="Bahasa Indonesia" srclang="id">
+        <track src="captions/caption.vtt" kind="captions" title="English" srclang="eng">
+    </video><br><br>
+
+    <h1>Mengambil Video Dari Embeded Youtube</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gp8JOmHEfos?si=-h0nqTPOXZu7Ecis" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>
