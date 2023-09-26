@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 600px;
+            padding: 20px;
+        }
+
+        form div {
+            margin: 10px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input:invalid, input:required:invalid {
+            border: none;
+            outline: 2px solid red;
+            border-radius: 2px;
+        }
+
+        input.valid, input:required {
+            border: 1px solid black;
+            outline: inherit;
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post" autocomplete="off" novalidate>
+        <div class="">
+            <label for="nama">Masukan Nama : </label>
+            <input type="text" name="nama" id="nama" autofocus required minlength="2" maxlength="5" oninvalid="this.setCustomValidity('Ini Harus Di isi')" oninput="this.setCustomValidity('')">
+        </div>
+        
+        <div class="">
+            <label for="email">Masukan Email : </label>
+            <input type="email" name="email" id="email">
+        </div>
+       
+        <div class="">
+            <label for="tel">Masukan No HP : </label>
+            <input type="tel" name="tel" id="tel">
+        </div>
+        
+        <div class="">
+            <label for="url">Masukan URL : </label>
+            <input type="url" name="url" id="email">
+        </div>
+       
+        <div class="">
+            <label for="number">Masukan Number : </label>
+            <input type="number" name="number" id="number" min="10" max="100" step="5">
+        </div>
+        
+        <div class="">
+            <label for="range">Masukan Angka : </label>
+            <span class="awal"></span>
+            <input type="range" name="range" id="range" min="0" max="100" step="5">
+            <span class="akhir"></span>
+        </div>
+       
+        <div class="">
+            <label for="time">Masukan Waktu : </label>
+            <input type="time" name="time" id="time">
+        </div>
+        
+        <div class="">
+            <label for="warna">Masukan Warna : </label>
+            <input type="color" name="warna" id="warna">
+            <span class="hexa" id="hexa"></span>
+        </div>
+        
+        <div class="">
+            <label for="nohp">Masukan nohp : </label>
+            <input type="tel" name="nohp" id="nohp" pattern="(\+62|62|0)[1-9]{6, 9}$">
+        </div>
+
+        <div class="">
+            <button type="submit"></button>
+        </div>
+    </form>
+
+    <script>
+        const slider = document.querySelector('#range');
+        const awal = document.querySelector('.awal');
+        const akhir = document.querySelector('.akhir');
+
+        awal.innerHTML = slider.min;
+        akhir.innerHTML = slider.value;
+        slider.addEventListener('input', function () {
+            akhir.innerHTML = slider.value;
+        });
+
+        const warna = document.querySelector('#warna');
+        const hexa = document.querySelector('#hexa');
+
+        hexa.innerHTML = warna.value;
+        warna.addEventListener('input', function () {
+            hexa.innerHTML = warna.value;
+            hexa.style.color = warna.value;
+        });
+    </script>
+</body>
+</html>
